@@ -1,0 +1,20 @@
+filename = input("Nama file: ")
+
+try:
+    file = open(filename)
+
+    for baris in file:
+        soal, jawaban_benar = baris.split("||")
+        soal = soal.strip()
+        jawaban_benar = jawaban_benar.strip().lower()
+
+        print(soal)
+        jawaban = input("Jawab: ").lower()
+
+        if jawaban == jawaban_benar:
+            print("Jawaban benar!\n")
+        else:
+            print("Jawaban salah!\n")
+
+except:
+    print("File tidak ditemukan!")
