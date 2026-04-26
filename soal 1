@@ -1,0 +1,21 @@
+file1 = input("Masukkan nama file 1: ")
+file2 = input("Masukkan nama file 2: ")
+
+try:
+    f1 = open(file1).readlines()
+    f2 = open(file2).readlines()
+
+    max_len = max(len(f1), len(f2))
+
+    for i in range(max_len):
+        baris1 = f1[i].strip() if i < len(f1) else ""
+        baris2 = f2[i].strip() if i < len(f2) else ""
+
+        if baris1 != baris2:
+            print(f"Baris ke-{i+1}:")
+            print("File1:", baris1)
+            print("File2:", baris2)
+            print()
+
+except:
+    print("File tidak ditemukan!")
